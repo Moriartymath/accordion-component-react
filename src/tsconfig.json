@@ -4,5 +4,6 @@
     "esModuleInterop": true,
     "noEmit": true,
     "allowImportingTsExtensions": true
-  }
+  },
+  "isolatedModules": true
 }
