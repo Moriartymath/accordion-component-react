@@ -4,16 +4,24 @@ import styles from "./Accordion.module.css";
 type AccordionProps = {
   qaItem: { title: string; text: string };
   qaNumber: number;
+  isOpen: boolean;
+  setOpenedItemId: Function;
 };
 
-function Accordion({ qaItem, qaNumber }: AccordionProps) {
-  const [isOpen, setIsOpen] = useState(false);
+function Accordion({
+  qaItem,
+  qaNumber,
+  isOpen,
+  setOpenedItemId,
+}: AccordionProps) {
   const textColor = isOpen ? "#00b700" : "";
 
   return (
     <div
       className={`${styles.container} ${isOpen ? styles.opened : ""}`}
-      onClick={() => setIsOpen((currIsOpen) => !currIsOpen)}
+      onClick={() =>
+        setOpenedItemId((itemId: number) => (isOpen ? -1 : qaNumber - 1))
+      }
     >
       <h3
         className={styles.qaNumber}

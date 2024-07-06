@@ -25,6 +25,7 @@
 .title,
 .sign {
   font-size: 1.2em;
+  cursor: pointer;
 }
 .sign {
   user-select: none;
